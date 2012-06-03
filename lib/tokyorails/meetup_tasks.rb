@@ -130,7 +130,7 @@ module Tokyorails::MeetupTasks
 
   # Retrieve data (results AND meta) from Meetup API
   #
-  # @return [Array] An array of hashes; each one represents a meetup item
+  # @return [Hash] A hash of arrays (meta and results from Meetup API call)
   # @note currently hardcoded to retrieve a maximum of 250 items, should
   #   probably improve to retrieve all members in batches etc.
   def self.get_meetup_api_meta_and_results(endpoint, params = {})
@@ -172,7 +172,7 @@ module Tokyorails::MeetupTasks
     meta = response_hash[:meta] || {}
 
     if ! meta.empty? and ! meta['total_count'].nil? and meta['total_count'] > page_size
-      (meta['total_count'] / page_size.to_f).ceil.times do |iteration|
+      (meta['total_count'] / page_size).times do |iteration|
         total_results += get_meetup_api_meta_and_results(endpoint, params.merge({:page => page_size, :offset => iteration}))[:results]
       end
     end

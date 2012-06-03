@@ -152,7 +152,8 @@ describe Tokyorails::MeetupTasks do
     it 'should import using paging if there are more members than the page size' do
       stub_request(:get, /.*/).
         to_return(:body => get_response('members_offset_0.json')).then.
-        to_return(:body => get_response('members_offset_1.json'))
+        to_return(:body => get_response('members_offset_1.json')).then.
+        to_raise("Unnecessary calls made")
       Tokyorails::MeetupTasks.import_members
       Member.count.should == 214
     end
