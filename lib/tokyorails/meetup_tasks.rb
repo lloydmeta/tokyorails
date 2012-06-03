@@ -172,7 +172,6 @@ module Tokyorails::MeetupTasks
     meta = response_hash[:meta] || {}
 
     if ! meta.empty? and ! meta['total_count'].nil? and meta['total_count'] > page_size
-      puts 'paging is necessary !'
       (meta['total_count'] / page_size.to_f).ceil.times do |iteration|
         total_results += get_meetup_api_meta_and_results(endpoint, params.merge({:page => page_size, :offset => iteration}))[:results]
       end

@@ -141,7 +141,7 @@ describe Tokyorails::MeetupTasks do
     end
 
   end
-  
+
   context 'API paging and offsets' do
 
     before(:each) do
