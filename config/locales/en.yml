@@ -4,7 +4,10 @@ en:
     ja: Japanese
 
   flash:
-    login_failed: Unfortunately, we couldn't log you in. Please check to see if you're logged into Meetup.com and are part of the TokyoRails group on Meetup.com
+    login_failed: >+
+        Unfortunately, we couldn't log you in. Please check to see if you're logged into Meetup.com and are part of the Tokyo Rails group on Meetup.com <br/><br/>
+
+        If you are logged into Meetup and have just joined the Meetup group, please check back in an hour when Tokyo Rails has had a chance to import new members :)
 
   homepage:
     index:
