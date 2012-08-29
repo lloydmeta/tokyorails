@@ -40,7 +40,8 @@
     <% else %>
       <%= link_to t('.login'), "/auth/meetup", :class => 'login' %>
     <% end %>
-  <%= yield %>
+    <%= render 'layouts/messages' %>
+    <%= yield %>
   </div>
 
   <footer>

@@ -3,6 +3,9 @@ en:
     en: English
     ja: Japanese
 
+  flash:
+    login_failed: Unfortunately, we couldn't log you in. Please check to see if you're logged into Meetup.com and are part of the TokyoRails group on Meetup.com
+
   homepage:
     index:
       intro1: The TOKYO Rails Meetup Group is for web engineers who are using, or are interested in learning more about the Ruby on Rails framework.
