@@ -5,9 +5,9 @@ class SessionsController < ApplicationController
     member = Member.authenticate(omniauth)
     if member
         cookies[:access_token] = member.access_token
-        redirect_to session.delete(:return_to) || root_url
+        redirect_to session.delete(:return_to) || locale_root_path
     else
-        redirect_to root_url, :alert => t('flash.login_failed')
+        redirect_to locale_root_path, :alert => t('flash.login_failed')
     end
   end
 
@@ -18,11 +18,11 @@ class SessionsController < ApplicationController
 
   def destroy
     cookies[:access_token] = nil
-    redirect_to root_url
+    redirect_to locale_root_path
   end
 
   def failure
-    redirect_to root_url
+    redirect_to locale_root_path
   end
 
 end
